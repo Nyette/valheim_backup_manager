@@ -7,6 +7,7 @@ import sys
 import time
 
 def backup(config):
+    ext = '.db'
     location = {
         'Windows': Path.home() / 'AppData' / 'LocalLow' / 'IronGate' / 'Valheim'
     }
@@ -17,7 +18,7 @@ def backup(config):
         if worlds_path.exists():
             paths = list(worlds_path.iterdir())
             if len(paths) > 0:
-                big_db_paths = [path for path in paths if str(path).endswith('.mp4') and path.stat().st_size >= 1000]
+                big_db_paths = [path for path in paths if str(path).endswith(ext) and path.stat().st_size >= 1000]
                 if len(big_db_paths) > 0:
                     dst = config['dst'] / 'valheim_backup'
                     shutil.copytree(src, dst, dirs_exist_ok=True)
