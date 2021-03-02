@@ -25,3 +25,9 @@ It will automatically create the `valheim_backup` directory for you, which will 
 Use the `--freq` flag. If you wanted to make the backup happen every 2 minutes, you'd run:
 
 `python valheim_backup_manager_cli.py --freq 2`
+
+### Executable
+
+To run the executable with custom arguments, you can create a shortcut of it and then add the flag(s) of your choice to the end of the `Target` field in the shortcut's properties.
+
+![](./assets/custom_args.png?raw=true)
